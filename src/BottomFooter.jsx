@@ -10,10 +10,10 @@ export default function BottomFooter({ items }) {
   cntChecked();
   return (
     <>
-      <div className=" bg-warning-subtle w-100 d-flex align-items-center justify-content-center text-center p-2">
+      <div className=" bg-warning-subtle w-100 d-flex align-items-center justify-content-center text-center p-3">
         {items.length > 0 ? (
           <p>
-            <span role="img" aria-label="suitcase">
+            <span role="img" aria-label="suitcase" className="me-1">
               💼
             </span>
             you have {items.length} items in your list and you already packed{" "}
@@ -22,7 +22,11 @@ export default function BottomFooter({ items }) {
         ) : (
           <p>
             start adding some items to your list
-            <span aria-label="a rocket blasting off" role="img">
+            <span
+              aria-label="a rocket blasting off"
+              role="img"
+              className="ms-1"
+            >
               🚀
             </span>
           </p>

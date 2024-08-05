@@ -17,6 +17,7 @@ export default function Content({
               id={index}
             >
               <input
+                className="m-2"
                 type="checkbox"
                 checked={item.checked}
                 onChange={(e) => {
@@ -38,7 +39,6 @@ export default function Content({
                 aria-label="red X"
                 className="fs-6 btn"
                 onClick={(e) => {
-
                   Swal.fire({
                     title: "Are you sure you want to delete this item?",
                     showCancelButton: true,

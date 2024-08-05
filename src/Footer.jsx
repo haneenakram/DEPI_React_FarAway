@@ -56,7 +56,7 @@ export default function Footer({
     <div className="position-fixed bottom-0 w-100">
       <div className="p-2   gap-2 d-flex  align-items-center justify-content-center buttom-25">
         <select
-          className="main-text rounded-pill p-1 bg-warning-subtle"
+          className="main-text rounded-pill p-1 bg-warning-subtle p-2"
           id="itemSelect"
           onChange={handleSelectChange}
         >
@@ -66,7 +66,9 @@ export default function Footer({
           <option value="1">sort by packed status</option>
           <option value="2">sort by input order</option>
           <option value="3">sort by description</option>
-          <option value="4">sort by amount</option>
+          <option value="4" >
+            sort by amount
+          </option>
         </select>
         <button
           type="button"
