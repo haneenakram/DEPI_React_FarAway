@@ -21,6 +21,9 @@
 - JavaScript
 - SweetAlert2 (for alerts)
 
+## Demo
+[Far Away website link](https://haneenakram.github.io/DEPI_React_FarAway/)
+
 ## Installation
 
 1. Clone this repository.
