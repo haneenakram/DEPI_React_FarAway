@@ -1,24 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
-
+import uniqid from "uniqid";
+import Swal from "sweetalert2";
+import Header from "./Header";
+import { useState } from "react";
+import Content from "./Content";
+import AddingItem from "./AddingItem";
+const key="items";
+const initialItems = JSON.parse(localStorage.getItem(key)) || [];
+const updateLocalStorage = (items) => {
+  localStorage.setItem(key, JSON.stringify(items));
+};
 function App() {
+  const [items, setItems] = useState(initialItems);
+  function loadData() {
+    setItems(JSON.parse(localStorage.getItem(key)) || []);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <AddingItem
+        items={items}
+        setItems={setItems}
+        updateLocalStorage={updateLocalStorage}
+      />
+      <Content
+        items={items}
+        setItems={setItems}
+        loadData={loadData}
+        updateLocalStorage={updateLocalStorage}
+      />
+    </>
   );
 }
 
